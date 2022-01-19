@@ -4,15 +4,13 @@ def decrypt(path,key):
 		print('The path of file : ', path)
 		print('Note : Encryption key and Decryption key must be same.')
 		print('Key for Decryption : ', key)
-		fin = open(path, 'rb')
-		image = fin.read()
-		fin.close()	
+		with open(path, 'rb') as fin:
+			image = fin.read()
 		image = bytearray(image)
 		for index, values in enumerate(image):
 			image[index] = values ^ key
-		fin = open(path, 'wb')	
-		fin.write(image)
-		fin.close()
+		with open(path, 'wb') as fin:
+			fin.write(image)
 		print('Decryption Done...')
 	except Exception:
 		print('Error caught : ', Exception.__name__)
