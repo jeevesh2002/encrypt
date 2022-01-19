@@ -15,5 +15,3 @@ for subdir, dirs, files in os.walk(path):
         elif choice == "decrypt" and key2 == key1:
             if filepath.endswith(".jpg") or filepath.endswith(".png") or filepath.endswith(".jpeg"):
                 decrypt.decrypt(filepath,key2)
-        else :
-            pass
